@@ -1,4 +1,4 @@
-<h1></h1>
+<h1>Toys 'R' Us Makes a Holiday Comeback</h1>
 
 <p>Toys 'R' Us is back this holiday season with pop-up stores bringing classic toy magic and festive fun to families across the Philadelphia area.</p>
 
