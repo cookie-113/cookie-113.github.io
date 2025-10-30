@@ -9,4 +9,4 @@
 
 <p>A three image gallery of Terrestrial birds, with CC and public domain images.</p>
 
-<p><a href="" target="blank">Bird Gallery web link click here</a></p>
+<p><a href="/BasicWebDev/BirdGallery.html" target="blank">Bird Gallery web link click here</a></p>
