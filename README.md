@@ -16,4 +16,4 @@
 
   <p>Practise how to use tables of HTML.</p>
 
-<p><a href="" target="blank">Table practise web link click here</a></p>
+<p><a href="/BasicWebDev/TablePractise.html" target="blank">Table practise web link click here</a></p>
