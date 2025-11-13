@@ -24,3 +24,10 @@
   <p>Practise how to make a form of HTML.</p>
 
 <p><a href="/BasicWebDev/FormTest.html" target="blank">Form practise web link click here</a></p>
+
+
+<h1>Assignment 5: Color Scheme Assignment</h1>
+
+  <p>Use a table to show the color use of the image.</p>
+
+<p><a href="/BasicWebDev/ColorSchemeAssignment.html" target="blank">Color Scheme Assignment web link click here</a></p>
