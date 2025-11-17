@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Food Menus</title>
+<style>
+body {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Common menu styles */
+.menu {
+    width: 400px;
+    height: 550px;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+/* Breakfast menu */
+#breakfast {
+    background-color: #235102;
+	border: 5px solid #A8CB8F;
+}
+
+#breakfast h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Lunch menu */
+#lunch {
+    background-color: #4D1632;
+	border: 5px solid #C99FB5;
+;
+}
+
+#lunch h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Dinner menu */
+#dinner {
+    background-color: #34495E;
+	border: 5px solid #1F3A4D;
+}
+
+#dinner h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="menu" id="breakfast">
+    <h2>Breakfast Menu</h2>
+    <ul>
+        <li>Pancakes with Syrup</li>
+        <li>Egg Sandwich</li>
+        <li>Fruit Yogurt</li>
+        <li>Hash Browns</li>
+	<h2>Drink</h2>
+        <li>Orange Juice</li>
+        <li>Hot Coffee</li>
+    </ul>
+</div>
+
+<div class="menu" id="lunch">
+    <h2>Lunch Menu</h2>
+    <ul>
+        <li>Bacon Burger</li>
+        <li>Chicken Wrap</li>
+        <li>Fries</li>
+        <li>Caesar Salad</li>
+	<h2>Drink</h2>
+        <li>Lemon Iced Tea</li>
+        <li>Soda</li>
+    </ul>
+</div>
+
+<div class="menu" id="dinner">
+    <h2>Dinner Menu</h2>
+    <ul>
+        <li>Steak Sandwich</li>
+        <li>BBQ Chicken Pizza</li>
+        <li>Spicy Wings</li>
+        <li>Pasta</li>
+	<h2>Drink</h2>
+        <li>Chocolate Milkshake</li>
+        <li>Sweet Tea</li>
+    </ul>
+</div>
+
+</body>
+</html>
