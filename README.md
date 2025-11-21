@@ -40,3 +40,8 @@
 <p><a href="/BasicWebDev/RestaurantMenu.html" target="blank">RestaurantMenu Assignment web link click here</a></p>
 
 ----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 7: Internal CSS List Assignment</h1>
+
+  <p>Learn to use internal css.</p>
+
+<p><a href="/BasicWebDev/InternalCSSList.html" target="blank">Internal CSS List Assignment web link click here</a></p>
