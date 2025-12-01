@@ -45,3 +45,9 @@
   <p>Learn to use internal css.</p>
 
 <p><a href="/BasicWebDev/InternalCSSList.html" target="blank">Internal CSS List Assignment web link click here</a></p>
+
+----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 8: Members of Team Assignment</h1>
+
+<p><a href="/BasicWebDev/MembersofTeam.html" target="blank">Web link click here</a></p>
+
