@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowman Puzzle - Perfect</title>
+    <title>Snowman Puzzle - Perfectly Solved</title>
     <style>
         body {
             margin: 0;
+            padding: 20px;
             background: #b3e5fc;
             font-family: Arial, sans-serif;
             display: grid;
             grid-template-rows: auto auto 1fr auto;
-            gap: 20px;
-            padding: 20px;
+            gap: 25px;
             min-height: 100vh;
         }
 
@@ -23,15 +23,15 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
         header { font-size: 2.5em; color: #d81b60; }
         .info  { font-size: 1.3em; color: #1565c0; }
 
+        /* Perfect 4×5 grid — no gaps ever */
         .puzzle-container {
-            width: 800px;                    /* exact image width */
-            height: 1000px;                  /* exact image height */
+            width: 800px;
+            height: 1000px;
             margin: 0 auto;
-            display: grid;                   /* ← We use GRID here for perfect alignment */
+            display: grid;
             grid-template-columns: repeat(4, 200px);
             grid-template-rows: repeat(5, 200px);
             border: 10px solid #1976d2;
@@ -59,23 +59,27 @@
     </section>
 
     <main class="puzzle-container">
-        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 1 / 1;">
-        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="grid-area: 1 / 2;">
-        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="grid-area: 1 / 3;">
-        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="grid-area: 1 / 4;">
+        <!-- ROW 1 -->
+        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 1 / 1"> <!-- top-left sky + carrot nose -->
+        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="grid-area: 1 / 2"> <!-- mountain (this is the WRONG piece – we hide it below) -->
+        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="grid-area: 1 / 3"> <!-- sky with snow -->
+        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="grid-area: 1 / 4"> <!-- top-right snow hill -->
 
-        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="grid-area: 2 / 1;">
-        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="grid-area: 2 / 2;">
-        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="grid-area: 2 / 3;">
-        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="grid-area: 2 / 4;">
+        <!-- ROW 2 -->
+        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="grid-area: 2 / 1"> <!-- left arm + body -->
+        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="grid-area: 2 / 2"> <!-- smiling face -->
+        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="grid-area: 2 / 3"> <!-- right arm + red buttons -->
+        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="grid-area: 2 / 4"> <!-- right side snow -->
 
-        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="grid-area: 3 / 1;">
-        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="grid-area: 3 / 2;">
-        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="grid-area: 3 / 3;">
-        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="grid-area: 3 / 4;">
+        <!-- ROW 3 -->
+        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="grid-area: 3 / 1"> <!-- bottom-left body -->
+        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="grid-area: 3 / 2"> <!-- middle bottom snow -->
+        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="grid-area: 3 / 3"> <!-- right bottom body -->
+        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="grid-area: 3 / 4"> <!-- pink pom-pom hat -->
 
-        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 4 / 2;"> <!-- duplicate if needed, or skip -->
-        <img src="/4.4_puzzle2/puzzle2_M.jpg" style="display:none;"> <!-- mountain hidden -->
+        <!-- ROW 4 & 5 (mostly empty sky/background) -->
+        <img src="/4.4_puzzle2/puzzle2_M.jpg" style="display:none"> <!-- mountain piece – HIDDEN -->
+        <!-- The rest of the cells stay empty on purpose – they’re just sky/snow -->
     </main>
 
     <footer>
