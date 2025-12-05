@@ -64,22 +64,6 @@
         color: #00695c;
         font-weight: bold;
     }
-
-        /* Manual ordering and sizing using flex-order and specific dimensions */
-        .piece1 { order: 1; }
-        .piece2 { order: 2; }
-        .piece3 { order: 3; }
-        .piece4 { order: 4; }
-        .piece5 { order: 5; }
-        .piece6 { order: 6; }
-        .piece7 { order: 7; }
-        .piece8 { order: 8; }
-        .piece9 { order: 9; }
-        .piece10 { order: 10; }
-        .piece11 { order: 11; }
-        .piece12 { order: 12; }
-        .piece13 { order: 13; } /* This is the mountain piece - doesn't belong */
-
     </style>
 </head>
 <body>
@@ -91,29 +75,27 @@
         <p><strong>Name:</strong>YuDuo Chen</p>
     </section>
 
-    <main class="puzzle-container">
- <main class="puzzle-container">
-    <!-- Correct order so the snowman appears perfectly -->
-    <img src="/4.4_puzzle2/puzzle2_G.jpg" alt="" style="order: 1;">
-    <img src="/4.4_puzzle2/puzzle2_A.jpg" alt="" style="order: 2;">
-    <img src="/4.4_puzzle2/puzzle2_E.jpg" alt="" style="order: 3;">
-    <img src="/4.4_puzzle2/puzzle2_K.jpg" alt="" style="order: 4;">
+<main class="puzzle-container">
+    <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">
+    <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order: 2">
+    <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 3">
+    <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 4">
 
-    <img src="/4.4_puzzle2/puzzle2_J.jpg" alt="" style="order: 5;">
-    <img src="/4.4_puzzle2/puzzle2_D.jpg" alt="" style="order: 6;">
-    <img src="/4.4_puzzle2/puzzle2_H.jpg" alt="" style="order: 7;">
-    <img src="/4.4_puzzle2/puzzle2_B.jpg" alt="" style="order: 8;">
+    <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">
+    <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">
+    <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">
+    <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order: 8">
 
-    <img src="/4.4_puzzle2/puzzle2_L.jpg" alt="" style="order: 9;">
-    <img src="/4.4_puzzle2/puzzle2_F.jpg" alt="" style="order:10;">
-    <img src="/4.4_puzzle2/puzzle2_I.jpg" alt="" style="order:11;">
-    <img src="/4.4_puzzle2/puzzle2_C.jpg" alt="" style="order:12;">
+    <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">
+    <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">
+    <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:11">
+    <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:12">
 
-    <!-- This is the mountain piece that doesn't belong → hidden -->
-    <img src="/4.4_puzzle2/puzzle2_M.jpg" alt="wrong piece" style="order:13; display:none !important;">
+    <!-- Wrong piece - hidden -->
+    <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
 </main>
-    </main>
 </body>
 
 </html>
+
 
