@@ -1,3 +1,4 @@
+/* General table styling */
 table {
   border-collapse: collapse;
   width: 80%;
@@ -16,16 +17,36 @@ th {
   color: white;
 }
 
+/* Pseudo-class: highlight row on hover */
 tr:hover {
   background-color: #f2f2f2;
 }
 
+/* Zebra striping for table rows */
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+/* Table captions */
 caption {
   font-size: 1.5em;
   font-weight: bold;
   margin: 10px;
+}
+
+/* Navigation bar */
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+nav a:hover {
+  color: #333;
 }
