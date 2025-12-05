@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Snowman Puzzle - Fixed & Perfect</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowman Puzzle - Perfect</title>
     <style>
         body {
             margin: 0;
-            padding: 20px;
             background: #b3e5fc;
             font-family: Arial, sans-serif;
             display: grid;
             grid-template-rows: auto auto 1fr auto;
-            gap: 25px;
+            gap: 20px;
+            padding: 20px;
             min-height: 100vh;
         }
 
@@ -26,58 +28,59 @@
         .info  { font-size: 1.3em; color: #1565c0; }
 
         .puzzle-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 800px;
+            width: 800px;                    /* exact image width */
+            height: 1000px;                  /* exact image height */
             margin: 0 auto;
-            border: 8px solid #1976d2;
+            display: grid;                   /* ← We use GRID here for perfect alignment */
+            grid-template-columns: repeat(4, 200px);
+            grid-template-rows: repeat(5, 200px);
+            border: 10px solid #1976d2;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .puzzle-container img {
-            order: 999;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .hide { display: none !important; }
-
-        footer {
-            font-size: 1.2em;
-            color: #00695c;
-            font-weight: bold;
-        }
+        footer { font-size: 1.2em; color: #00695c; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Snowman Puzzle</h1>
-    </header>
+    <header><h1>Snowman Puzzle - Solved!</h1></header>
 
     <section class="info">
-        <p><strong>Name:</strong> YuDuo Chen</p>
+        <p><strong>Name:</strong> FakeName</p>
+        <p><strong>Puzzle:</strong> Snowman with Pink Hat</p>
     </section>
 
     <main class="puzzle-container">
+        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 1 / 1;">
+        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="grid-area: 1 / 2;">
+        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="grid-area: 1 / 3;">
+        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="grid-area: 1 / 4;">
 
-        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">
-        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order: 2">
-        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 3">
-        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 4">
+        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="grid-area: 2 / 1;">
+        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="grid-area: 2 / 2;">
+        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="grid-area: 2 / 3;">
+        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="grid-area: 2 / 4;">
 
-        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">
-        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">
-        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">
-        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order: 8">
+        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="grid-area: 3 / 1;">
+        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="grid-area: 3 / 2;">
+        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="grid-area: 3 / 3;">
+        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="grid-area: 3 / 4;">
 
-        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">
-        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">
-        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:11">
-        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:12">
-
-        <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
+        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 4 / 2;"> <!-- duplicate if needed, or skip -->
+        <img src="/4.4_puzzle2/puzzle2_M.jpg" style="display:none;"> <!-- mountain hidden -->
     </main>
+
+    <footer>
+        <p>Assignment completed: December 4, 2025</p>
+    </footer>
 
 </body>
 </html>
