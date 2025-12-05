@@ -26,14 +26,14 @@
         header { font-size: 2.5em; color: #d81b60; }
         .info  { font-size: 1.3em; color: #1565c0; }
 
-        /* Perfect 4×5 grid — no gaps ever */
+        /* Corrected 4×3 grid for 12 puzzle pieces */
         .puzzle-container {
             width: 800px;
-            height: 1000px;
+            height: 600px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 200px);
-            grid-template-rows: repeat(5, 200px);
+            grid-template-rows: repeat(3, 200px);
             border: 10px solid #1976d2;
             border-radius: 15px;
             overflow: hidden;
@@ -41,9 +41,10 @@
         }
 
         .puzzle-container img {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         footer { font-size: 1.2em; color: #00695c; font-weight: bold; }
@@ -60,26 +61,22 @@
 
     <main class="puzzle-container">
         <!-- ROW 1 -->
-        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="grid-area: 1 / 1"> <!-- top-left sky + carrot nose -->
-        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="grid-area: 1 / 2"> <!-- mountain (this is the WRONG piece – we hide it below) -->
-        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="grid-area: 1 / 3"> <!-- sky with snow -->
-        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="grid-area: 1 / 4"> <!-- top-right snow hill -->
+        <img src="/4.4_puzzle2/puzzle2_G.jpg" alt="Puzzle piece G"> <!-- top-left sky + carrot nose -->
+        <img src="/4.4_puzzle2/puzzle2_E.jpg" alt="Puzzle piece E"> <!-- sky with snow -->
+        <img src="/4.4_puzzle2/puzzle2_K.jpg" alt="Puzzle piece K"> <!-- top-right snow hill -->
+        <img src="/4.4_puzzle2/puzzle2_C.jpg" alt="Puzzle piece C"> <!-- pink pom-pom hat -->
 
         <!-- ROW 2 -->
-        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="grid-area: 2 / 1"> <!-- left arm + body -->
-        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="grid-area: 2 / 2"> <!-- smiling face -->
-        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="grid-area: 2 / 3"> <!-- right arm + red buttons -->
-        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="grid-area: 2 / 4"> <!-- right side snow -->
+        <img src="/4.4_puzzle2/puzzle2_J.jpg" alt="Puzzle piece J"> <!-- left arm + body -->
+        <img src="/4.4_puzzle2/puzzle2_D.jpg" alt="Puzzle piece D"> <!-- smiling face -->
+        <img src="/4.4_puzzle2/puzzle2_H.jpg" alt="Puzzle piece H"> <!-- right arm + red buttons -->
+        <img src="/4.4_puzzle2/puzzle2_B.jpg" alt="Puzzle piece B"> <!-- right side snow -->
 
         <!-- ROW 3 -->
-        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="grid-area: 3 / 1"> <!-- bottom-left body -->
-        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="grid-area: 3 / 2"> <!-- middle bottom snow -->
-        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="grid-area: 3 / 3"> <!-- right bottom body -->
-        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="grid-area: 3 / 4"> <!-- pink pom-pom hat -->
-
-        <!-- ROW 4 & 5 (mostly empty sky/background) -->
-        <img src="/4.4_puzzle2/puzzle2_M.jpg" style="display:none"> <!-- mountain piece – HIDDEN -->
-        <!-- The rest of the cells stay empty on purpose – they’re just sky/snow -->
+        <img src="/4.4_puzzle2/puzzle2_L.jpg" alt="Puzzle piece L"> <!-- bottom-left body -->
+        <img src="/4.4_puzzle2/puzzle2_F.jpg" alt="Puzzle piece F"> <!-- middle bottom snow -->
+        <img src="/4.4_puzzle2/puzzle2_I.jpg" alt="Puzzle piece I"> <!-- right bottom body -->
+        <img src="/4.4_puzzle2/puzzle2_M.jpg" alt="Puzzle piece M"> <!-- mountain piece -->
     </main>
 
     <footer>
