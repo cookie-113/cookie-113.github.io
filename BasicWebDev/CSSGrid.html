@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Snowman Puzzle - Final Perfect Version</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowman Puzzle - Zero Gaps Fixed</title>
     <style>
+        /* CSS GRID: Page Layout */
         body {
             margin: 0;
             padding: 20px;
@@ -25,6 +28,7 @@
         .info { font-size: 1.4rem; color: #1565c0; line-height: 1.8; }
         footer { font-size: 1.3rem; color: #00695c; font-weight: bold; }
 
+        /* FLEXBOX PUZZLE: ZERO GAPS + HIDE WRONG PIECE */
         .puzzle-wrapper {
             padding: 0;
             border: 12px solid #1976d2;
@@ -38,54 +42,57 @@
             width: 800px;
             height: 1000px;
             margin: 0 auto;
+            background: white;
             font-size: 0;
+            line-height: 0;
         }
 
         .puzzle-container img {
-            width: 200px;
-            height: 200px;
-            display: block;
+            width: 200px !important;
+            height: 200px !important;
             flex: 0 0 200px;
+            display: block;
+            float: left;              /* backup for zero gaps */
+            margin: 0 !important;
+            padding: 0 !important;
+            vertical-align: top;
             object-fit: cover;
         }
 
-        .hide {
+        /* SUPER HIDING FOR WRONG PIECE */
+        .puzzle-container img.hide {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            left: -9999px !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            float: none !important;
         }
     </style>
 </head>
 <body>
 
-    <header><h1>Snowman Puzzle<br><small>Solved with Flexbox</small></h1></header>
+    <header><h1>Snowman Puzzle<br><small>Zero Gaps + Hidden Piece (Final Fix)</small></h1></header>
 
     <section class="info">
-        <p><strong>Name:</strong> YuDuo Chen</p>
-        <p><strong>Puzzle:</strong> Snowman</p>
+        <p><strong>Name:</strong> FakeName</p>
+        <p><strong>Puzzle:</strong> Snowman with Pink Hat</p>
+        <p><strong>Fixes:</strong> No whitespace in HTML + float:left + super-hide class</p>
     </section>
 
     <section class="puzzle-wrapper">
         <div class="puzzle-container">
-            <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order:1">
-            <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order:2">
-            <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order:3">
-            <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:4">
-
-            <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order:5">
-            <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order:6">
-            <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order:7">
-            <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:8">
-
-            <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order:9">
-            <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">
-            <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order:11">
-            <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order:12">
-
-            <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
+<!-- NO SPACES/LINE BREAKS BETWEEN IMGS - THIS KILLS GAPS -->
+<img src="/4.4_puzzle2/puzzle2_G.jpg" style="order:1"><img src="/4.4_puzzle2/puzzle2_E.jpg" style="order:2"><img src="/4.4_puzzle2/puzzle2_K.jpg" style="order:3"><img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:4"><img src="/4.4_puzzle2/puzzle2_J.jpg" style="order:5"><img src="/4.4_puzzle2/puzzle2_D.jpg" style="order:6"><img src="/4.4_puzzle2/puzzle2_H.jpg" style="order:7"><img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:8"><img src="/4.4_puzzle2/puzzle2_L.jpg" style="order:9"><img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10"><img src="/4.4_puzzle2/puzzle2_B.jpg" style="order:11"><img src="/4.4_puzzle2/puzzle2_A.jpg" style="order:12"><img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide" alt="Hidden mountain">
         </div>
     </section>
 
     <footer>
-        <p>Assignment Completed: December 4, 2025</p>
+        <p>Assignment Completed: December 5, 2025</p>
     </footer>
 
 </body>
