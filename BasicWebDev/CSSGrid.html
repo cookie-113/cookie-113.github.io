@@ -1,101 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CSS Puzzle Assignment - Snowman</title>
-<style>
-    /* Whole page layout - very simple grid */
-    body {
-        margin: 0;
-        padding: 20px;
-        background: #b3e5fc;
-        font-family: Arial, sans-serif;
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 25px;
-        min-height: 100vh;
-    }
+    <title>Snowman Puzzle - Fixed & Perfect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #b3e5fc;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 25px;
+            min-height: 100vh;
+        }
 
-    /* Top sections */
-    header, .info, footer {
-        background: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+        header, .info, footer {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
-    header { 
-        font-size: 2.5em; 
-        color: #d81b60; 
-    }
-    .info { 
-        font-size: 1.3em; 
-        color: #1565c0; 
-    }
+        header { font-size: 2.5em; color: #d81b60; }
+        .info  { font-size: 1.3em; color: #1565c0; }
 
-    /* The puzzle - this is the important part */
-    .puzzle-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0;                     /* no gaps between pieces */
-        max-width: 820px;
-        margin: 0 auto;
-        border: 8px solid #1976d2;
-        border-radius: 15px;
-        overflow: hidden;
-        background: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+        .puzzle-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px;
+            margin: 0 auto;
+            border: 8px solid #1976d2;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
 
-    .puzzle-container img {
-        display: block;
-        width: auto;
-        height: auto;
-    }
+        .puzzle-container img {
+            order: 999;
+        }
 
-    /* Hide the wrong piece (the mountain) */
-    .hide {
-        display: none !important;
-    }
+        .hide { display: none !important; }
 
-    footer {
-        font-size: 1.2em;
-        color: #00695c;
-        font-weight: bold;
-    }
+        footer {
+            font-size: 1.2em;
+            color: #00695c;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Snowman Puzzle</h1>
     </header>
 
     <section class="info">
-        <p><strong>Name:</strong>YuDuo Chen</p>
+        <p><strong>Name:</strong> YuDuo Chen</p>
     </section>
 
-<main class="puzzle-container">
-    <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">
-    <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order: 2">
-    <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 3">
-    <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 4">
+    <main class="puzzle-container">
 
-    <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">
-    <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">
-    <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">
-    <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order: 8">
+        <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">
+        <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order: 2">
+        <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 3">
+        <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 4">
 
-    <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">
-    <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">
-    <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:11">
-    <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:12">
+        <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">
+        <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">
+        <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">
+        <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order: 8">
 
-    <!-- Wrong piece - hidden -->
-    <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
-</main>
+        <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">
+        <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">
+        <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order:11">
+        <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order:12">
+
+        <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
+    </main>
+
 </body>
-
 </html>
-
-
