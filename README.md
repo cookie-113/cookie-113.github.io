@@ -55,3 +55,9 @@
 <h1>Assignment 9: CSS Grid</h1>
 
 <p><a href="/BasicWebDev/CSSGrid.html" target="blank">Web link click here</a></p>
+
+----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 10: CSS link</h1>
+
+<p><a href="/BasicWebDev/badminton.html" target="blank">Web link click here</a></p>
+
