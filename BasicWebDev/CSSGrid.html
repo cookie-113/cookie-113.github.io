@@ -1,116 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowman Puzzle - Flexbox Solved</title>
+    <title>Snowman Puzzle - Zero Gaps & Hidden Wrong Piece</title>
     <style>
-        /* === CSS GRID FOR PAGE LAYOUT === */
+
         body {
             margin: 0;
             padding: 20px;
-            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#87CEEB, #E0F6FF);
+            font-family: Arial, sans-serif;
             min-height: 100vh;
             display: grid;
             grid-template-rows: auto auto 1fr auto;
-            gap: 25px;
+            gap: 30px;
         }
 
-        header, .info, .puzzle-section, footer {
+        header, .info, footer {
             background: white;
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             text-align: center;
         }
+        header h1 { margin:0; font-size: 3rem; color: #d81b60; }
+        .info { font-size: 1.4rem; color: #1565c0; line-height: 1.8; }
+        footer { font-size: 1.3rem; color: #00695c; font-weight: bold; }
 
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #d81b60;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .info {
-            font-size: 1.4em;
-            color: #1565c0;
-            line-height: 1.8;
-        }
-
-        /* === FLEXBOX TO SOLVE THE PUZZLE === */
-        .puzzle-section {
+        .puzzle-wrapper {
             padding: 0;
-            overflow: hidden;
             border: 12px solid #1976d2;
             border-radius: 20px;
+            overflow: hidden;
         }
 
         .puzzle-container {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             width: 800px;
-            height: 1000px;
             margin: 0 auto;
             background: white;
         }
 
-        .puzzle-container img {
+        .row {
+            display: flex;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .row img {
             width: 200px;
             height: 200px;
             object-fit: cover;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Hide the wrong piece (mountain) */
         .hide {
             display: none !important;
-        }
-
-        footer {
-            font-size: 1.3em;
-            color: #00695c;
-            font-weight: bold;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
         }
     </style>
 </head>
 <body>
 
-    <!-- SECTION 1: Name & Puzzle Info (CSS Grid) -->
-    <header>
-        <h1>Snowman Puzzle - Solved with Flexbox!</h1>
-    </header>
+    <header><h1>Snowman Puzzle<br></h1></header>
 
     <section class="info">
-        <p><strong>Name:</strong> FakeName</p>
-        <p><strong>Puzzle Selected:</strong> Snowman with Pink Hat</p>
-        <p><strong>Technique Used:</strong> Flexbox + CSS Grid Layout</p>
+        <p><strong>Name:</strong> YuDuo Chen</p>
     </section>
 
-    <!-- SECTION 2: Flexbox Puzzle (correctly solved) -->
-    <section class="puzzle-section">
+
+    <section class="puzzle-wrapper">
         <div class="puzzle-container">
-            <!-- Correct order using flex 'order' property -->
-            <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">  <!-- top-left: carrot nose -->
-            <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 2">  <!-- top sky -->
-            <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 3">  <!-- top-right sky -->
-            <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order: 4">  <!-- pink pom-pom -->
-
-            <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">  <!-- left body -->
-            <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">  <!-- smiling face -->
-            <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">  <!-- right body + buttons -->
-            <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order: 8">  <!-- right arm + smile -->
-
-            <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">  <!-- bottom-left body -->
-            <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">  <!-- snow hill -->
-            <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order:11">  <!-- bottom-right body -->
-            <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order:12">  <!-- pink hat bottom -->
-
-            <!-- The WRONG piece (mountain) is included but HIDDEN -->
+            <div class="row"><img src="/4.4_puzzle2/puzzle2_G.jpg">
+                <img src="/4.4_puzzle2/puzzle2_E.jpg">
+                <img src="/4.4_puzzle2/puzzle2_K.jpg">
+                <img src="/4.4_puzzle2/puzzle2_C.jpg">
+            </div>
+            <div class="row"><img src="/4.4_puzzle2/puzzle2_J.jpg">
+                <img src="/4.4_puzzle2/puzzle2_D.jpg">
+                <img src="/4.4_puzzle2/puzzle2_H.jpg">
+                <img src="/4.4_puzzle2/puzzle2_I.jpg">
+            </div>
+            <div class="row"><img src="/4.4_puzzle2/puzzle2_L.jpg">
+                <img src="/4.4_puzzle2/puzzle2_F.jpg">
+                <img src="/4.4_puzzle2/puzzle2_B.jpg">
+                <img src="/4.4_puzzle2/puzzle2_A.jpg">
+            </div>
+            <div class="row"></div>
             <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
-        </div>
+            </div>
     </section>
 
-    <!-- SECTION 3: Date (CSS Grid) -->
     <footer>
         <p>Assignment Completed: December 4, 2025</p>
     </footer>
