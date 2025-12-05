@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Puzzle Assignment - Snowman</title>
+    <style>
+        /* Overall page uses CSS Grid */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #e0f7fa, #81d4fa);
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        header, .info, .puzzle-container, footer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            font-size: 2em;
+            color: #1565c0;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 1.2em;
+            color: #01579b;
+        }
+
+        /* Flexbox Puzzle Container */
+        .puzzle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0; /* No gap so pieces touch perfectly */
+            max-width: 800px;
+            margin: 0 auto;
+            border: 4px solid #0277bd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .puzzle-container img {
+            width: auto;
+            height: auto;
+            flex: 0 0 auto;
+            /* All correct pieces are visible */
+        }
+
+        /* Hide the one piece that doesn't belong */
+        .puzzle-container img.extra-piece {
+            display: none !important;
+        }
+
+        /* Manual ordering and sizing using flex-order and specific dimensions */
+        .piece1 { order: 1; }
+        .piece2 { order: 2; }
+        .piece3 { order: 3; }
+        .piece4 { order: 4; }
+        .piece5 { order: 5; }
+        .piece6 { order: 6; }
+        .piece7 { order: 7; }
+        .piece8 { order: 8; }
+        .piece9 { order: 9; }
+        .piece10 { order: 10; }
+        .piece11 { order: 11; }
+        .piece12 { order: 12; }
+        .piece13 { order: 13; } /* This is the mountain piece - doesn't belong */
+
+        footer {
+            text-align: center;
+            color: #00695c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Snowman Puzzle - Solved with Flexbox</h1>
+    </header>
+
+    <section class="info">
+        <p><strong>Name:</strong> Alex Winter</p>
+        <p><strong>Puzzle Chosen:</strong> Snowman with Pink Hat</p>
+    </section>
+
+    <main class="puzzle-container">
+        <!-- All 13 images from the snowman puzzle zip -->
+        <!-- The 13th piece (mountain) is included but hidden with display: none -->
+        <img src="puzzle2_A.jpg" alt="snowman piece" class="piece1">
+        <img src="puzzle2_B.jpg" alt="snowman piece" class="piece2">
+        <img src="puzzle2_C.jpg" alt="snowman piece" class="piece3">
+        <img src="puzzle2_D.jpg" alt="snowman piece" class="piece4">
+        <img src="puzzle2_E.jpg" alt="snowman piece" class="piece5">
+        <img src="puzzle2_F.jpg" alt="snowman piece" class="piece6">
+        <img src="puzzle2_G.jpg" alt="snowman piece" class="piece7">
+        <img src="puzzle2_H.jpg" alt="snowman piece" class="piece8">
+        <img src="puzzle2_I.jpg" alt="snowman piece" class="piece9">
+        <img src="puzzle2_J.jpg" alt="snowman piece" class="piece10">
+        <img src="puzzle2_K.jpg" alt="snowman piece" class="piece11">
+        <img src="puzzle2_L.jpg" alt="snowman piece" class="piece12">
+        <img src="puzzle2_M.jpg" alt="extra piece - mountain (hidden)" class="piece13 extra-piece">
+    </main>
+</body>
+</html>
