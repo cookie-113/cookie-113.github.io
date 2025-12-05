@@ -2,64 +2,68 @@
 <html lang="en">
 <head>
     <title>CSS Puzzle Assignment - Snowman</title>
-    <style>
-        /* Overall page uses CSS Grid */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background: linear-gradient(to bottom, #e0f7fa, #81d4fa);
-            min-height: 100vh;
-            display: grid;
-            grid-template-rows: auto auto 1fr auto;
-            gap: 20px;
-            padding: 20px;
-        }
+<style>
+    /* Whole page layout - very simple grid */
+    body {
+        margin: 0;
+        padding: 20px;
+        background: #b3e5fc;
+        font-family: Arial, sans-serif;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 25px;
+        min-height: 100vh;
+    }
 
-        header, .info, .puzzle-container, footer {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+    /* Top sections */
+    header, .info, footer {
+        background: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-        header {
-            text-align: center;
-            font-size: 2em;
-            color: #1565c0;
-        }
+    header { 
+        font-size: 2.5em; 
+        color: #d81b60; 
+    }
+    .info { 
+        font-size: 1.3em; 
+        color: #1565c0; 
+    }
 
-        .info {
-            text-align: center;
-            font-size: 1.2em;
-            color: #01579b;
-        }
+    /* The puzzle - this is the important part */
+    .puzzle-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;                     /* no gaps between pieces */
+        max-width: 820px;
+        margin: 0 auto;
+        border: 8px solid #1976d2;
+        border-radius: 15px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-        /* Flexbox Puzzle Container */
-        .puzzle-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 0; /* No gap so pieces touch perfectly */
-            max-width: 800px;
-            margin: 0 auto;
-            border: 4px solid #0277bd;
-            border-radius: 12px;
-            overflow: hidden;
-            background: white;
-        }
+    .puzzle-container img {
+        display: block;
+        width: auto;
+        height: auto;
+    }
 
-        .puzzle-container img {
-            width: auto;
-            height: auto;
-            flex: 0 0 auto;
-            /* All correct pieces are visible */
-        }
+    /* Hide the wrong piece (the mountain) */
+    .hide {
+        display: none !important;
+    }
 
-        /* Hide the one piece that doesn't belong */
-        .puzzle-container img.extra-piece {
-            display: none !important;
-        }
+    footer {
+        font-size: 1.2em;
+        color: #00695c;
+        font-weight: bold;
+    }
 
         /* Manual ordering and sizing using flex-order and specific dimensions */
         .piece1 { order: 1; }
@@ -76,40 +80,40 @@
         .piece12 { order: 12; }
         .piece13 { order: 13; } /* This is the mountain piece - doesn't belong */
 
-        footer {
-            text-align: center;
-            color: #00695c;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Snowman Puzzle - Solved with Flexbox</h1>
+        <h1>Snowman Puzzle</h1>
     </header>
 
     <section class="info">
-        <p><strong>Name:</strong> Alex Winter</p>
-        <p><strong>Puzzle Chosen:</strong> Snowman with Pink Hat</p>
+        <p><strong>Name:</strong>YuDuo Chen</p>
     </section>
 
     <main class="puzzle-container">
-        <!-- All 13 images from the snowman puzzle zip -->
-        <!-- The 13th piece (mountain) is included but hidden with display: none -->
-        <img src="/4.4_puzzle2/puzzle2_A.jpg" alt="snowman piece" class="piece1">
-        <img src="/4.4_puzzle2/puzzle2_B.jpg" alt="snowman piece" class="piece2">
-        <img src="/4.4_puzzle2/puzzle2_C.jpg" alt="snowman piece" class="piece3">
-        <img src="/4.4_puzzle2/puzzle2_D.jpg" alt="snowman piece" class="piece4">
-        <img src="/4.4_puzzle2/puzzle2_E.jpg" alt="snowman piece" class="piece5">
-        <img src="/4.4_puzzle2/puzzle2_F.jpg" alt="snowman piece" class="piece6">
-        <img src="/4.4_puzzle2/puzzle2_G.jpg" alt="snowman piece" class="piece7">
-        <img src="/4.4_puzzle2/puzzle2_H.jpg" alt="snowman piece" class="piece8">
-        <img src="/4.4_puzzle2/puzzle2_I.jpg" alt="snowman piece" class="piece9">
-        <img src="/4.4_puzzle2/puzzle2_J.jpg" alt="snowman piece" class="piece10">
-        <img src="/4.4_puzzle2/puzzle2_K.jpg" alt="snowman piece" class="piece11">
-        <img src="/4.4_puzzle2/puzzle2_L.jpg" alt="snowman piece" class="piece12">
-        <img src="/4.4_puzzle2/puzzle2_M.jpg" alt="extra piece - mountain (hidden)" class="piece13 extra-piece">
+ <main class="puzzle-container">
+    <!-- Correct order so the snowman appears perfectly -->
+    <img src="/4.4_puzzle2/puzzle2_G.jpg" alt="" style="order: 1;">
+    <img src="/4.4_puzzle2/puzzle2_A.jpg" alt="" style="order: 2;">
+    <img src="/4.4_puzzle2/puzzle2_E.jpg" alt="" style="order: 3;">
+    <img src="/4.4_puzzle2/puzzle2_K.jpg" alt="" style="order: 4;">
+
+    <img src="/4.4_puzzle2/puzzle2_J.jpg" alt="" style="order: 5;">
+    <img src="/4.4_puzzle2/puzzle2_D.jpg" alt="" style="order: 6;">
+    <img src="/4.4_puzzle2/puzzle2_H.jpg" alt="" style="order: 7;">
+    <img src="/4.4_puzzle2/puzzle2_B.jpg" alt="" style="order: 8;">
+
+    <img src="/4.4_puzzle2/puzzle2_L.jpg" alt="" style="order: 9;">
+    <img src="/4.4_puzzle2/puzzle2_F.jpg" alt="" style="order:10;">
+    <img src="/4.4_puzzle2/puzzle2_I.jpg" alt="" style="order:11;">
+    <img src="/4.4_puzzle2/puzzle2_C.jpg" alt="" style="order:12;">
+
+    <!-- This is the mountain piece that doesn't belong → hidden -->
+    <img src="/4.4_puzzle2/puzzle2_M.jpg" alt="wrong piece" style="order:13; display:none !important;">
+</main>
     </main>
 </body>
 
 </html>
+
