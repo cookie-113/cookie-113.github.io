@@ -1,4 +1,5 @@
-table {
+/* General table styling for all scorecards */
+.scorecard {
   border-collapse: collapse;
   width: 80%;
   margin: 20px auto;
@@ -6,26 +7,47 @@ table {
   text-align: center;
 }
 
-th, td {
+.scorecard th, .scorecard td {
   border: 2px solid #333;
   padding: 10px;
 }
 
-th {
+.scorecard th {
   background-color: #4CAF50;
   color: white;
 }
 
-tr:hover {
-  background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
+.scorecard tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-caption {
+.scorecard tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.scorecard caption {
   font-size: 1.5em;
   font-weight: bold;
   margin: 10px;
+}
+
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+.scorecard td.total {
+  font-weight: bold;
+  color: #d9534f;
 }
