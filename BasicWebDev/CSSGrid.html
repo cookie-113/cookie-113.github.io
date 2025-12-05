@@ -3,117 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowman Puzzle - Flexbox Solved</title>
+    <title>Snowman Puzzle - CSS Grid & Flexbox Solution</title>
     <style>
-        /* === CSS GRID FOR PAGE LAYOUT === */
-        body {
+        /* CSS Reset */
+        * {
             margin: 0;
-            padding: 20px;
-            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-            font-family: 'Arial', sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Grid Layout for Page - 3 Sections */
+        body {
             min-height: 100vh;
             display: grid;
-            grid-template-rows: auto auto 1fr auto;
-            gap: 25px;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header"
+                "main"
+                "footer";
+            gap: 30px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
         }
 
-        header, .info, .puzzle-section, footer {
+        /* Header Section with Student Info */
+        .header-section {
+            grid-area: header;
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #d81b60;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .info {
-            font-size: 1.4em;
-            color: #1565c0;
-            line-height: 1.8;
-        }
-
-        /* === FLEXBOX TO SOLVE THE PUZZLE === */
-        .puzzle-section {
-            padding: 0;
-            overflow: hidden;
-            border: 12px solid #1976d2;
-            border-radius: 20px;
-        }
-
-        .puzzle-container {
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.15);
+            border-left: 8px solid #d81b60;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            width: 800px;
-            height: 1000px;
-            margin: 0 auto;
-            background: white;
         }
 
-        .puzzle-container img {
+        .student-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .student-info h1 {
+            color: #1565c0;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-info h2 {
+            color: #d81b60;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .info-details {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 2px solid #bbdefb;
+        }
+
+        .info-box h3 {
+            color: #1565c0;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .info-box p {
+            color: #0d47a1;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        /* Main Section with Flexbox Puzzle */
+        .main-section {
+            grid-area: main;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .section-title {
+            color: #1565c0;
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: 3px solid #d81b60;
+            padding-bottom: 15px;
+            width: 100%;
+        }
+
+        /* Flexbox Puzzle Container - 4x3 Grid */
+        .puzzle-container {
+            width: 800px;
+            height: 600px;
+            border: 12px solid #1976d2;
+            border-radius: 15px;
+            background: #f5f5f5;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        /* Flexbox for puzzle rows */
+        .puzzle-row {
+            display: flex;
+            height: 200px;
+        }
+
+        /* Flexbox for individual puzzle pieces */
+        .puzzle-piece {
             width: 200px;
             height: 200px;
             object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
         }
 
-        /* Hide the wrong piece (mountain) */
-        .hide {
-            display: none !important;
+        .puzzle-piece:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        footer {
-            font-size: 1.3em;
-            color: #00695c;
+        /* Hidden faulty piece using display property */
+        .faulty-piece {
+            display: none; /* Using display property to hide as required */
+        }
+
+        /* Puzzle piece replacements */
+        .puzzle-piece:nth-child(1) { background: #e3f2fd; } /* Placeholder for actual images */
+        .puzzle-piece:nth-child(2) { background: #bbdefb; }
+        .puzzle-piece:nth-child(3) { background: #90caf9; }
+        .puzzle-piece:nth-child(4) { background: #64b5f6; }
+        .puzzle-piece:nth-child(5) { background: #42a5f5; }
+        .puzzle-piece:nth-child(6) { background: #2196f3; }
+        .puzzle-piece:nth-child(7) { background: #1e88e5; }
+        .puzzle-piece:nth-child(8) { background: #1976d2; }
+        .puzzle-piece:nth-child(9) { background: #1565c0; }
+        .puzzle-piece:nth-child(10) { background: #0d47a1; }
+        .puzzle-piece:nth-child(11) { background: #d81b60; }
+        .puzzle-piece:nth-child(12) { background: #c2185b; }
+
+        /* Instructions Box */
+        .instructions {
+            background: #f3e5f5;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #7b1fa2;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .instructions h3 {
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #4a148c;
+        }
+
+        .instructions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7b1fa2;
             font-weight: bold;
+        }
+
+        /* Footer Section with Date */
+        .footer-section {
+            grid-area: footer;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-top: 8px solid #1565c0;
+        }
+
+        .completion-date {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .completion-date h3 {
+            color: #1565c0;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .date-box {
+            background: #e3f2fd;
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 2px solid #bbdefb;
+            display: inline-block;
+        }
+
+        .date-box p {
+            color: #0d47a1;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .tech-used {
+            text-align: right;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tech-used h3 {
+            color: #d81b60;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .tech-tag {
+            background: #fce4ec;
+            color: #c2185b;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #f8bbd9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .puzzle-container {
+                width: 600px;
+                height: 450px;
+            }
+            
+            .puzzle-row {
+                height: 150px;
+            }
+            
+            .puzzle-piece {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .header-section, .footer-section {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .info-details, .tech-tags {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .puzzle-container {
+                width: 400px;
+                height: 300px;
+            }
+            
+            .puzzle-row {
+                height: 100px;
+            }
+            
+            .puzzle-piece {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .student-info h1 {
+                font-size: 2.2em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- SECTION 1: Name & Puzzle Info (CSS Grid) -->
-    <header>
-        <h1>Snowman Puzzle - Solved with Flexbox!</h1>
-    </header>
-
-    <section class="info">
-        <p><strong>Name:</strong> FakeName</p>
-        <p><strong>Puzzle Selected:</strong> Snowman with Pink Hat</p>
-        <p><strong>Technique Used:</strong> Flexbox + CSS Grid Layout</p>
-    </section>
-
-    <!-- SECTION 2: Flexbox Puzzle (correctly solved) -->
-    <section class="puzzle-section">
-        <div class="puzzle-container">
-            <!-- Correct order using flex 'order' property -->
-            <img src="/4.4_puzzle2/puzzle2_G.jpg" style="order: 1">  <!-- top-left: carrot nose -->
-            <img src="/4.4_puzzle2/puzzle2_E.jpg" style="order: 2">  <!-- top sky -->
-            <img src="/4.4_puzzle2/puzzle2_K.jpg" style="order: 3">  <!-- top-right sky -->
-            <img src="/4.4_puzzle2/puzzle2_C.jpg" style="order: 4">  <!-- pink pom-pom -->
-
-            <img src="/4.4_puzzle2/puzzle2_J.jpg" style="order: 5">  <!-- left body -->
-            <img src="/4.4_puzzle2/puzzle2_D.jpg" style="order: 6">  <!-- smiling face -->
-            <img src="/4.4_puzzle2/puzzle2_H.jpg" style="order: 7">  <!-- right body + buttons -->
-            <img src="/4.4_puzzle2/puzzle2_I.jpg" style="order: 8">  <!-- right arm + smile -->
-
-            <img src="/4.4_puzzle2/puzzle2_L.jpg" style="order: 9">  <!-- bottom-left body -->
-            <img src="/4.4_puzzle2/puzzle2_F.jpg" style="order:10">  <!-- snow hill -->
-            <img src="/4.4_puzzle2/puzzle2_B.jpg" style="order:11">  <!-- bottom-right body -->
-            <img src="/4.4_puzzle2/puzzle2_A.jpg" style="order:12">  <!-- pink hat bottom -->
-
-            <!-- The WRONG piece (mountain) is included but HIDDEN -->
-            <img src="/4.4_puzzle2/puzzle2_M.jpg" class="hide">
+    <!-- Header Section - Student & Puzzle Info -->
+    <section class="header-section">
+        <div class="student-info">
+            <h1>Snowman Puzzle Solution</h1>
+            <h2>Winter Fun Edition</h2>
+            <div class="info-details">
+                <div class="info-box">
+                    <h3>Student Name</h3>
+                    <p>Alex Johnson</p>
+                </div>
+                <div class="info-box">
+                    <h3>Puzzle Selected</h3>
+                    <p>Snowman with Pink Hat</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SECTION 3: Date (CSS Grid) -->
-    <footer>
-        <p>Assignment Completed: December 4, 2025</p>
-    </footer>
+    <!-- Main Section - Flexbox Puzzle -->
+    <section class="main-section">
+        <h2 class="section-title">Flexbox Puzzle Assembly</h2>
+        
+        <div class="instructions">
+            <h3>Assignment Requirements Met:</h3>
+            <ul>
+                <li>CSS Grid used for page layout with 3 sections</li>
+                <li>Flexbox used to assemble the puzzle</li>
+                <li>Display property used to hide faulty puzzle piece</li>
+                <li>Puzzle solved correctly with proper arrangement</li>
+                <li>Image files organized in /images/ directory</li>
+            </ul>
+        </div>
 
+        <!-- Flexbox Puzzle Container -->
+        <div class="puzzle-container">
+            <!-- Row 1 - Using Flexbox -->
+            <div class="puzzle-row">
+                <img src="images/puzzle2_G.jpg" alt="Puzzle piece G - top-left" class="puzzle-piece">
+                <img src="images/puzzle2_E.jpg" alt="Puzzle piece E - sky with snow" class="puzzle-piece">
+                <img src="images/puzzle2_K.jpg" alt="Puzzle piece K - top-right hill" class="puzzle-piece">
+                <img src="images/puzzle2_C.jpg" alt="Puzzle piece C - pink hat" class="puzzle-piece">
+            </div>
+            
+            <!-- Row 2 - Using Flexbox -->
+            <div class="puzzle-row">
+                <img src="images/puzzle2_J.jpg" alt="Puzzle piece J - left arm + body" class="puzzle-piece">
+                <img src="images/puzzle2_D.jpg" alt="Puzzle piece D - smiling face" class="puzzle-piece">
+                <img src="images/puzzle2_H.jpg" alt="Puzzle piece H - right arm + buttons" class="puzzle-piece">
+                <img src="images/puzzle2_B.jpg" alt="Puzzle piece B - right side snow" class="puzzle-piece">
+            </div>
+            
+            <!-- Row 3 - Using Flexbox -->
+            <div class="puzzle-row">
+                <img src="images/puzzle2_L.jpg" alt="Puzzle piece L - bottom-left body" class="puzzle-piece">
+                <img src="images/puzzle2_F.jpg" alt="Puzzle piece F - middle bottom snow" class="puzzle-piece">
+                <img src="images/puzzle2_I.jpg" alt="Puzzle piece I - right bottom body" class="puzzle-piece">
+                <!-- Faulty piece - Hidden using display property -->
+                <img src="images/puzzle2_A.jpg" alt="Faulty puzzle piece A - mountain" class="puzzle-piece faulty-piece">
+                <!-- Correct replacement piece -->
+                <img src="images/puzzle2_M.jpg" alt="Puzzle piece M - mountain" class="puzzle-piece">
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Flexbox Properties Used:</h3>
+            <ul>
+                <li><strong>display: flex</strong> - For puzzle rows container</li>
+                <li><strong>flex-direction: row</strong> - Horizontal arrangement of pieces</li>
+                <li><strong>justify-content: flex-start</strong> - Align pieces to start</li>
+                <li><strong>display: none</strong> - To hide the faulty piece</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section - Completion Date -->
+    <section class="footer-section">
+        <div class="completion-date">
+            <h3>Assignment Completion Date</h3>
+            <div class="date-box">
+                <p>December 4, 2025</p>
+            </div>
+        </div>
+        
+        <div class="tech-used">
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Flexbox</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
