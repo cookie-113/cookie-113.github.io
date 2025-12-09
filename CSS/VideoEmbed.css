@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+img {
+    width: 500px;
+    display: block;
+    margin: 10px 0 20px 0;
+    border: 2px solid #ccc;
+}
+
+iframe {
+    margin-top: 20px;
+}
