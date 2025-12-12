@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Image Effects</title>
+    <link rel="stylesheet" href="D:\CSS\CSS3.css">
+
+<style>
+img {
+    width: 250px;
+    margin: 20px;
+}
+
+.penguin {
+    border-radius: 50%;
+    border: 2px solid #5f5332;
+    filter: sepia(60%);
+}
+
+.football-frame {
+    width: 350px;
+    height: 220px;
+    background-image: url("5.4_images-assignment/tic-tac-toe.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.football-frame img {
+    width: 85%;
+}
+
+.dino {
+    filter: drop-shadow(10px 10px 8px #555);
+}
+
+.seagull-bg {
+    width: 300px;
+    padding: 20px;
+    background: linear-gradient(#147fe4, #a4beee);
+}
+
+.seagull-bg img {
+    width: 100%;
+    display: block;
+}
+
+.butterfly {
+    width: 250px;
+    border-radius: 100px 0 100px 0;
+    filter: invert(100%);
+}
+
+
+.stage {
+    position: relative;
+    display: inline-block;
+}
+
+.stage img {
+    display: block;
+    filter: blur(3px);
+}
+
+.overlay {
+    position: absolute;
+}
+
+.stage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-shadow: 4px 4px 8px #000;
+}
+</style>
+
+
+</head>
+<body>
+
+<h1>CSS3 Image Effects</h1>
+
+<img src="5.4_images-assignment/penguins.jpg" class="penguin">
+
+<div class="football-frame">
+<img src="5.4_images-assignment/football_field.jpg">
+</div>
+
+<img src="5.4_images-assignment/dinosaur.png" class="dino">
+
+<img src="5.4_images-assignment/seagull.png" class="seagull-bg">
+
+<img src="5.4_images-assignment/butterfly.jpg" class="butterfly">
+
+<div class="stage">
+<img src="5.4_images-assignment/theater_stage.jpg">
+<div class="overlay"></div>
+<div class="stage-text"><p>Presenting</p></div>
+</div>
+
+</body>
+</html>
