@@ -70,3 +70,8 @@
 <h1>Assignment 12: CSS3</h1>
 
 <p><a href="/BasicWebDev/CSS3.html" target="blank">Web link click here</a></p>
+
+----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 13: Flashcards</h1>
+
+<p><a href="/BasicWebDev/flashcards.html" target="blank">Web link click here</a></p>
