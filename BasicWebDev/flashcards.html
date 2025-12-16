@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Flashcards Review</title>
+
+    <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Page title with animation */
+.page-title {
+    text-align: center;
+    animation: slideDown 1.5s ease;
+}
+
+/* Animation that runs on page load */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card styling */
+.card {
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #aaa;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Question always visible */
+.question {
+    font-weight: bold;
+}
+
+/* Answer hidden by default */
+.answer {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Reveal answer on hover */
+.card:hover .answer {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="page-title">Web Design Flashcards</h1>
+
+<div class="card-container">
+
+    <div class="card">
+        <div class="question">What does HTML stand for?</div>
+        <div class="answer">HyperText Markup Language</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What tag creates a link?</div>
+        <div class="answer">&lt;a&gt; tag</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What does CSS control?</div>
+        <div class="answer">The style and layout of a webpage</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What property changes text color?</div>
+        <div class="answer">color</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What does display: flex do?</div>
+        <div class="answer">Creates a flexible layout</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What property adds space inside an element?</div>
+        <div class="answer">padding</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What selector targets all paragraphs?</div>
+        <div class="answer">p</div>
+    </div>
+
+    <div class="card">
+        <div class="question">What does hover do?</div>
+        <div class="answer">Applies styles when the mouse is over an element</div>
+    </div>
+
+</div>
+
+</body>
+</html>
