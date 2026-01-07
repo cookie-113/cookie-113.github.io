@@ -80,3 +80,8 @@
 <h1>Assignment 14: Blog</h1>
 
 <p><a href="/BasicWebDev/Blog.html" target="blank">Web link click here</a></p>
+
+----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 15: Minecraft site</h1>
+
+<p><a href="cookie-smp-site/about.html" target="blank">Web link click here</a></p>
