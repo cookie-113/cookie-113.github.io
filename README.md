@@ -75,3 +75,8 @@
 <h1>Assignment 13: Flashcards</h1>
 
 <p><a href="/BasicWebDev/flashcards.html" target="blank">Web link click here</a></p>
+
+----------------------------------------------------------------------------------------------------------------------------------
+<h1>Assignment 14: Blog</h1>
+
+<p><a href="/BasicWebDev/Blog.html" target="blank">Web link click here</a></p>
