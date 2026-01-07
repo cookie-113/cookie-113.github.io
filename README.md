@@ -84,4 +84,4 @@
 ----------------------------------------------------------------------------------------------------------------------------------
 <h1>Assignment 15: Minecraft site</h1>
 
-<p><a href="cookie-smp-site/about.html" target="blank">Web link click here</a></p>
+<p><a href="cookie-smp-site/index.html" target="blank">Web link click here</a></p>
